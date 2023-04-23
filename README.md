@@ -22,4 +22,5 @@ git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
 ### 참고 사이트
 
-https://passwd.tistory.com/entry/Python-Pandas-Series-1 
+https://passwd.tistory.com/entry/Python-Pandas-Series-1  
+https://datascienceschool.net/intro.html  
