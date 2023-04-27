@@ -11,8 +11,10 @@ VSCode 에 Jupyter extensions 설치하고,
 https://github.com/jupyterlab/jupyterlab
 ```bash
 $ pip install ipykernel
+# or $ pip install jupyter (or notebook)
 $ pip install jupyterlab
-$ jupyter lab  # or $ jupyter notebook 
+$ jupyter lab  
+# or $ jupyter notebook 
 ```
 git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
