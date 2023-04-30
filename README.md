@@ -7,8 +7,8 @@ VSCode 에 Jupyter extensions 설치하고,
 ```$ source .venv/bin/activate``` 으로 virtual 환경 실행   
 ```(.venv)$ pip install ipykernel```으로 관련 python 모듈 설치  
 
-> '$ python -m ipykernel install --user' 을 사용하는 경우 ikernel 을 import 할때,  
-설정오류가 발생할 수 있다. 되도록 사용하지 말자
+> '$ python -m ipykernel install --user' 을 사용하는 경우 jupyter notebook (lab) 에서 ikernel 을 import 할때,  
+설정오류가 발생할 수 있다. 되도록 사용하지 말자 (pip 로 설치)
 
 ```
 [E 08:57:38.101 NotebookApp] Failed to run command:
