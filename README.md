@@ -1,4 +1,4 @@
-### VSCode with Jypyter extensions
+## VSCode with Jypyter extensions
 https://code.visualstudio.com/docs/datascience/overview  
 VSCode 에 Jupyter extensions 설치하고,  
 해당 프로젝트를 github repo 에 저장  
@@ -14,8 +14,9 @@ VSCode 에 Jupyter extensions 설치하고,
 [E 08:57:38.101 NotebookApp] Failed to run command:
     ['/Users/myoungjunesung/pyproject/data/ipynb/.venv/bin/python3', '-m', 'ipykernel_launcher', '-f', '/Users/myoungjunesung/Library/Jupyter/runtime/kernel-5cc8a27b-46fd-45a7-8eee-395c9d2b9f92.json']
 ```
+</br>
 
-### Jupyter lab
+## Jupyter lab
 https://github.com/jupyterlab/jupyterlab
 ```bash
 $ pip install ipykernel
@@ -26,11 +27,23 @@ $ jupyter lab
 ```
 git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
-### Other Jupyter 
+</br>
+
+## Other Jupyter 
 > 1. [Anaconda](https://www.anaconda.com/) 을 설치해서 Jupyter Notebook 사용  (Local)  
 > 2. [google colab](https://colab.research.google.com), [Kaggle](https://www.kaggle.com), [dacon](https://dacon.io/) 에서 제공하는 cloud 커널 을 사용  (Cloud)  
 
-### 참고 사이트
+</br>
 
-https://passwd.tistory.com/entry/Python-Pandas-Series-1  
-https://datascienceschool.net/intro.html  
+## 참고 사이트
+
+[판다스 시리즈](https://passwd.tistory.com/entry/Python-Pandas-Series-1)  
+[데이터스쿨](https://datascienceschool.net/intro.html)  
+[데이터매님](https://www.datamanim.com/dataset/99_pandas/pandasMain.html) 
+[판다스 10min 영문](https://pandas.pydata.org/docs/user_guide/10min.html#)  
+[판단스 10min 한글](https://dandyrilla.github.io/2017-08-12/pandas-10min/)  
+[판다스 함수 설명 한글](https://runebook.dev/ko/docs/pandas/-index-#DataFrame)  
+[나도코딩 데이터분석](https://nadocoding.tistory.com/90)  
+[함수 찾아보기](https://wikidocs.net/book/7188)  
+[모의고사 tjd229](http://tjd229.tistory.com/category/Computer%20Science/Data%20Science)
+
