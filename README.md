@@ -7,7 +7,7 @@ VSCode 에 Jupyter extensions 설치하고,
 ```$ source .venv/bin/activate``` 으로 virtual 환경 실행   
 ```(.venv)$ pip install ipykernel```으로 관련 python 모듈 설치  
 
-> '$ python -m ipykernel install --user' 을 사용하는 경우 jupyter notebook (lab) 에서 ikernel 을 import 할때,  
+> '$ python -m ipykernel install --user' 을 사용하는 경우 jupyter notebook (lab) 에서 ikernel 을.할때,  
 설정오류가 발생할 수 있다. 되도록 사용하지 말자 (pip 로 설치)
 
 ```
@@ -16,7 +16,7 @@ VSCode 에 Jupyter extensions 설치하고,
 ```
 </br>
 
-## Jupyter lab
+## Jupyter lab, Notebook
 https://github.com/jupyterlab/jupyterlab
 ```bash
 $ pip install ipykernel
@@ -47,3 +47,66 @@ git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 [함수 찾아보기](https://wikidocs.net/book/7188)  
 [모의고사 tjd229](http://tjd229.tistory.com/category/Computer%20Science/Data%20Science)
 
+</br>
+
+## ML Model
+
+sklearn.model_selection.train_test_split   
+sklearn.model_selection.GridSearchCV  
+sklearn.model_selection.KFold  
+
+sklearn.compose.ColumnTransformer  
+
+sklearn.preprocessing.OneHotEncoder  
+sklearn.preprocessing.StandardScaler    
+sklearn.preprocessing.MinMaxScaler  
+sklearn.preprocessing.PolynomialFeatures   # 다항회귀  
+
+sklearn.linear_model.LinearRegression   
+sklearn.linear_model.LogisticRegression  
+sklearn.linear_model.Perceptron  
+sklearn.linear_model.SGDClassifier        # 경사하강법  
+sklearn.linear_model.SGDRegressor  
+
+sklearn.svm.SVC, LinearSVC  
+
+sklearn.ensemble.RandomForestClassifier  
+
+sklearn.neighbors.KNeighborsClassifier    # KNN  
+sklearn.neighbors.KNeighborsRegressor  
+
+sklearn.naive_bayes.GaussianNB  
+
+sklearn.tree.DecisionTreeClassifier  
+sklearn.tree.DecisionTreeRegressor   
+
+sklearn.cluster.KMeans    
+
+sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core  
+sklearn.metrics.f1_score  
+sklearn.metrics.recall_score   
+sklearn.metrics.silhouette_score  
+   
+scipy.stats.norm   
+
+</br>
+
+## modeling
+```
+X_train = df[[ , ]]   : 독립변수 학습 데이터  
+y_train = df[[ , ]]   : 종속변수 학습 데이터  
+X_test = df[ ]        : 독립변수 테스트 데이터  
+y_test = df[ ]        : 종속변수 테스트 데이터  
+
+y_pred                : 종속변수 예측 데이터  
+# pred_list = [ ]       : 종속변수 예흑 데이터 리스트  
+
+my_model = Given_ML_Model()       # ML 모델 적용
+my_model.fit(X_train, y_train)    # 학습데이터로 학습
+y_pred = my_model(X_test)         # 학습된 모델(my_model)으로 테스트 데이터 (독립변수)의 결과값 (종속변수) 예측
+
+my_model.score(y_test, y_pred)    # 학습된 모델(my_model)의 평가 (실제 종속변수, 예측 종속변수)
+
+# pred_list.append(y_pred) , score_list.append() 이용해 리스트화  
+
+```
