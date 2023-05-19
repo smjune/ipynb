@@ -55,7 +55,7 @@ sklearn.model_selection.train_test_split
 sklearn.model_selection.GridSearchCV  
 sklearn.model_selection.KFold  
 
-sklearn.compose.ColumnTransformer  
+sklearn.compose.ColumnTransformer(transformers=(['encoder',OneHotEncoder(drop='first') ,[2]]),remainder) 
 
 statsmodels.stats.outliers_influence.variance_inflation_factor  
 
@@ -66,14 +66,14 @@ sklearn.preprocessing.PolynomialFeatures   # 다항회귀
 sklearn.linear_model.LinearRegression   
 sklearn.linear_model.LogisticRegression  
 sklearn.linear_model.Perceptron  
-sklearn.linear_model.SGDClassifier        # 경사하강법  
+sklearn.linear_model.SGDClassifier(max_iter,eta0)        # 경사하강법  
 sklearn.linear_model.SGDRegressor  
 
 sklearn.svm.SVC, LinearSVC  
 
 sklearn.ensemble.RandomForestClassifier  
 
-sklearn.neighbors.KNeighborsClassifier    # KNN  
+sklearn.neighbors.KNeighborsClassifier(n_neighbors)    # KNN  
 sklearn.neighbors.KNeighborsRegressor  
 
 sklearn.naive_bayes.GaussianNB  
@@ -84,11 +84,12 @@ sklearn.tree.DecisionTreeRegressor
 sklearn.cluster.KMeans (n_cluster)   
 
 sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core  
-sklearn.metrics.f1_score  
-sklearn.metrics.recall_score   
-sklearn.metrics.silhouette_score  
+sklearn.metrics.f1_score, recall_score, accuracy_score, precision_score, confusion_matrix, roc_auc_score, classification_report
+sklearn.metrics.silhouette_score (X, lables)
    
 scipy.stats.norm (ppf)   
+
+
 
 </br>
 
@@ -103,10 +104,10 @@ y_pred                : 종속변수 예측 데이터
 # pred_list = [ ]       : 종속변수 예흑 데이터 리스트  
 
 my_model = Given_ML_Model()       # ML 모델 적용  
-my_model.fit(X_train, y_train)    # 학습데이터로 학습  - fit_predict(), fit_transform()  
+my_model.fit(X_train, y_train)    # 학습데이터로 학습  - fit_predict(), fit_transform(), inverse_trasform() 
 y_pred = my_model.predict(X_test) # 학습된 모델(my_model)으로 테스트 데이터 (독립변수, X_test)의 결과(종속변수, y_pred) 예측값  
                                   # coef, intercept, label_, inertia_
-my_model.score(y_test, y_pred)    # 학습된 모델(my_model)의 평가 (실제 종속변수, 예측 종속변수)
+my_model.score(y_test, y_test)    # 학습된 모델(my_model)의 test 평가 
 
 # pred_list.append(y_pred) , score_list.append() 이용해 리스트화  
 
