@@ -57,7 +57,7 @@ sklearn.model_selection.KFold
 
 sklearn.compose.ColumnTransformer(transformers=(['encoder', OneHotEncoder, [2]]),remainder)  
 
-statsmodels.stats.outliers_influence.variance_inflation_factor  
+statsmodels.stats.outliers_influence.variance_inflation_factor(df,i) for i in df_cols_count
 
 sklearn.preprocessing.OneHotEncoder(drop='first')   
 sklearn.preprocessing.StandardScaler, MinMaxScaler(range(start, stop+1))  
@@ -87,19 +87,20 @@ sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core
 sklearn.metrics.f1_score, recall_score, accuracy_score, precision_score, confusion_matrix, roc_auc_score, classification_report  
 sklearn.metrics.silhouette_score (X, lables)  
    
-scipy.stats.norm (ppf)   
+scipy.stats.norm / ppf  
 
 </br>
 
 ## modeling
 ```
 X_train = df[[ , ]]   : 독립변수 학습 데이터  (series.to_frame())
-y_train = df[ ]       : 종속변수 학습 데이터  
 X_test = df[[ , ]]    : 독립변수 테스트 데이터  (series.to_frame())
+y_train = df[ ]       : 종속변수 학습 데이터  
 y_test = df[ ]        : 종속변수 테스트 데이터  (실제결과)
 
 y_pred                : 종속변수 예측 데이터  
-# pred_list = [ ]       : 종속변수 예흑 데이터 리스트  
+# pred_list = [ ]     : 종속변수 예측 데이터 리스트  
+
 
 my_model = Given_ML_Model()       # ML 모델 적용  
 my_model.fit(X_train, y_train)    # 학습데이터로 학습  - fit_predict(), fit_transform(), inverse_trasform()  
@@ -107,6 +108,7 @@ y_pred = my_model.predict(X_test) # 학습된 모델(my_model)으로 테스트 �
                                   # coef_, intercept_, label_, inertia_  
 my_model.score(y_test, y_test)    # 학습된 모델(my_model)의 test 평가  
 
-# pred_list.append(y_pred) , score_list.append() 이용해 리스트화  
+# pred_list.append(y_pred)  
+# XXX_score(y_test,y_pred)        # 학습된 모델(my_model)의 실제값 (y_test) 대비 예측(y_pred)결과 평가
 
 ```
