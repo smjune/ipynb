@@ -51,6 +51,8 @@ git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
 ## ML Model
 
+scipy.stats.norm / ppf 
+
 sklearn.model_selection.train_test_split   
 sklearn.model_selection.GridSearchCV  
 sklearn.model_selection.KFold  
@@ -85,9 +87,7 @@ sklearn.cluster.KMeans (n_cluster, init, n_init)
 
 sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core   
 sklearn.metrics.f1_score, recall_score, accuracy_score, precision_score, confusion_matrix, roc_auc_score, classification_report  
-sklearn.metrics.silhouette_score (X, lables)  
-   
-scipy.stats.norm / ppf  
+sklearn.metrics.silhouette_score (X, lables)   
 
 </br>
 
