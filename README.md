@@ -57,12 +57,13 @@ sklearn.model_selection.train_test_split
 sklearn.model_selection.GridSearchCV  
 sklearn.model_selection.KFold  
 
-sklearn.compose.ColumnTransformer(transformers=(['encoder', OneHotEncoder, [2]]),remainder)  
+sklearn.compose.ColumnTransformer(transformers=(['encoder', OneHotEncoder(), [2]]),remainder)  
+sklearn.compose.make_column_transformer((OneHotEncoder(),['label']),(),remainder)
 
 statsmodels.stats.outliers_influence.variance_inflation_factor(df,i) for i in df_cols_count
 
 sklearn.preprocessing.OneHotEncoder(drop='first')   
-sklearn.preprocessing.StandardScaler, MinMaxScaler(range(start, stop+1))  
+sklearn.preprocessing.StandardScaler, MinMaxScaler(Feature_range(start, stop+1))  
 sklearn.preprocessing.PolynomialFeatures   # 다항회귀   
 
 sklearn.linear_model.LinearRegression   
@@ -86,7 +87,9 @@ sklearn.tree.DecisionTreeRegressor
 sklearn.cluster.KMeans (n_cluster, init, n_init)   
 
 sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core   
+
 sklearn.metrics.f1_score, recall_score, accuracy_score, precision_score, confusion_matrix, roc_auc_score, classification_report  
+
 sklearn.metrics.silhouette_score (X, lables)   
 
 </br>
@@ -106,7 +109,7 @@ my_model = Given_ML_Model()       # ML 모델 적용
 my_model.fit(X_train, y_train)    # 학습데이터로 학습  - fit_predict(), fit_transform(), inverse_trasform()  
 y_pred = my_model.predict(X_test) # 학습된 모델(my_model)으로 테스트 데이터 (독립변수, X_test)의 결과(종속변수, y_pred) 예측값  
                                   # coef_, intercept_, label_, inertia_  
-my_model.score(y_test, y_test)    # 학습된 모델(my_model)의 test 평가  
+my_model.score(X_test, y_test)    # 학습된 모델(my_model)의 test 평가  
 
 # pred_list.append(y_pred)  
 # XXX_score(y_test,y_pred)        # 학습된 모델(my_model)의 실제값 (y_test) 대비 예측(y_pred)결과 평가
