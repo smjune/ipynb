@@ -115,3 +115,8 @@ my_model.score(X_test, y_test)    # 학습된 모델(my_model)의 test 평가
 # XXX_score(y_test,y_pred)        # 학습된 모델(my_model)의 실제값 (y_test) 대비 예측(y_pred)결과 평가
 
 ```
+
+## for
+
+1. 개별 row,column 별 (row 한개씩) 계산은 : itertuples, apply 사용 (axis = 0,1)
+2. row,column 구룹별 (slicing) 계산은 : for i_value in unique_values_list (unique한 값을 공유하는 slicing 그룹)
