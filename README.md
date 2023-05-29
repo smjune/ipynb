@@ -74,15 +74,18 @@ sklearn.linear_model.SGDRegressor
 
 sklearn.svm.SVC, LinearSVC   
 
-sklearn.ensemble.RandomForestClassifier   
+sklearn.naive_bayes.GaussianNB, CategoricalNB, MultinomialNB, BernoulliNB, ComplementNB  
+
+sklearn.ensemble.RandomForestClassifier  
+sklearn.ensemble.RandomForestRegressor  
 
 sklearn.neighbors.KNeighborsClassifier(n_neighbors)    # KNN   
 sklearn.neighbors.KNeighborsRegressor  
 
-sklearn.naive_bayes.GaussianNB   
-
-sklearn.tree.DecisionTreeClassifier   
+sklearn.tree.DecisionTreeClassifier     
 sklearn.tree.DecisionTreeRegressor    
+sklearn.tree.BaggingClassifier  
+sklearn.tree.BaggingRegressor   
 
 sklearn.cluster.KMeans (n_cluster, init, n_init)   
 
@@ -105,7 +108,7 @@ y_pred                : 종속변수 예측 데이터
 # pred_list = [ ]     : 종속변수 예측 데이터 리스트  
 
 
-my_model = Given_ML_Model()       # ML 모델 적용  
+my_model = Given_ML_Model()       # ML 모델 클래스를 인스턴스화(하이퍼파라미터) 
 my_model.fit(X_train, y_train)    # 학습데이터로 학습  - fit_predict(), fit_transform(), inverse_trasform()  
 y_pred = my_model.predict(X_test) # 학습된 모델(my_model)으로 테스트 데이터 (독립변수, X_test)의 결과(종속변수, y_pred) 예측값  
                                   # coef_, intercept_, label_, inertia_  
