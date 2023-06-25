@@ -51,7 +51,8 @@ git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
 ## ML Model
 
-scipy.stats.norm / ppf 
+scipy.stats.norm, binor, poisson / pmf, ppf 
+scipy.stats.skew
 
 sklearn.model_selection.train_test_split   
 sklearn.model_selection.GridSearchCV  
@@ -71,6 +72,9 @@ sklearn.linear_model.LogisticRegression
 sklearn.linear_model.Perceptron  
 sklearn.linear_model.SGDClassifier(max_iter,eta0)        # 경사하강법   
 sklearn.linear_model.SGDRegressor  
+
+statsmodels.formula.api.ols(y_col~X_col_1+X_col2, df).fit()   # 절편 포함되어 있음 , 자동 인코딩
+statsmodels.api.OLS(y_train,X_train).fit()                    # 절편 미 포함   
 
 sklearn.svm.SVC, LinearSVC   
 
