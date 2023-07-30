@@ -104,9 +104,10 @@ sklearn.metrics.silhouette_score (X, lables)
 
 ## preprocessing 
 
-- row : Vertorization, groupby, pivot_table -> select Data (Train, Test)  
-1. 개별 (row 한개씩) 계산은 : itertuples, apply (axis = 0,1) 보다 vectorization 사용
-2. 구룹별 (slicing) 계산은 : for i_value in unique_values_list (unique한 값을 공유하는 slicing 그룹) 보다 groupby, pivot_table 사용
+- row : Vertorization, groupby, pivot_table -> select Data (Train, Test)   
+1. 개별 (row 한개씩) 계산은 : itertuples, apply (axis = 0,1) 보다 vectorization 사용  
+2. 구룹별 (slicing) 계산은 : for i_value in unique_values_list (unique한 값을 공유하는 sliced 그룹)   
+* groupby, pivot_table 사용 시, 기존 데이터셋을 업데이트 할때 reset_index, sort_index 로 기존 형태 복구 필요  
 
 - columns : For, apply -> select Feature (X, y)  
 
