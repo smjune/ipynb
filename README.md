@@ -52,47 +52,69 @@ git extension : ```pip install --upgrade jupyterlab jupyterlab-git```
 
 ## ML Model
 
-scipy.stats.norm, binor, poisson / pmf, ppf 
+scipy.stats.binom, poisson, expon / pmf, ppf 
+scipy.stats.t, ttest_1samp, ttest_ind, ttest_relf, 
+scipy.stats.chi2, chi2_contingency
+scipy.stats.f, f_oneway
+scipy.stats.levene, bartlett, fligner              # 등분산 검정
 scipy.stats.skew
 
-sklearn.model_selection.train_test_split   
-sklearn.model_selection.GridSearchCV  
+statsmodels.api.GML
+statsmodels.api.OLS(y_train,X_train).fit()                    # 절편 미 포함  
+statsmodels.formula.api.ols(y_col~X_col_1+X_col2, df).fit()   # 절편 포함되어 있음 , 자동 인코딩
+statsmodels.stats.anova.anova_lm
+statsmodels.stats.outliers_influence.variance_inflation_factor(df,i) for i in df_cols_count
+
+imblearn.over_sampling.SMOTE               # 샘플링
+
+sklearn.model_selection.train_test_split  
+sklearn.model_selection.cross_val_score 
+sklearn.model_selection.GridSearchCV       # 하이퍼 파라미터 튜닝
 sklearn.model_selection.KFold  
 
 sklearn.compose.ColumnTransformer(transformers=(['encoder', OneHotEncoder(), [2]]),remainder)  
 sklearn.compose.make_column_transformer((OneHotEncoder(),['label']),(),remainder)
 
-statsmodels.stats.outliers_influence.variance_inflation_factor(df,i) for i in df_cols_count
-
 sklearn.preprocessing.OneHotEncoder(drop='first')   
-sklearn.preprocessing.StandardScaler, MinMaxScaler(Feature_range(start, stop+1))  
-sklearn.preprocessing.PolynomialFeatures   # 다항회귀   
+sklearn.preprocessing.StandardScaler, MinMaxScaler(Feature_range(start, stop+1)), RobustScaler, QuantileTransformer  
+sklearn.preprocessing.PowerTransformer, KBinsDiscretizer  # 비선형 (np.log1p, Lasso, Ridge)
+sklearn.preprocessing.PolynomialFeatures   # 다항회귀 
+
+sklearn.decomposition.PCA (n_components=)
+sklearn.cross_decomposition.PLSRegression(n_components=)
+
+sklearn.manifold.TSNE(n_components= )
+sklearn.manifold.MDS(n_components=)  
+
+sklearn.discriminant_analysis.LinearDiscriminantAnalysis     # LDA
 
 sklearn.linear_model.LinearRegression   
 sklearn.linear_model.LogisticRegression  
 sklearn.linear_model.Perceptron  
-sklearn.linear_model.SGDClassifier(max_iter,eta0)        # 경사하강법   
-sklearn.linear_model.SGDRegressor  
+sklearn.linear_model.Lasso  
+sklearn.linear_model.Ridge  
+sklearn.linear_model.SGDClassifier(max_iter,eta0)  / SGDRegressor      # 경사하강법   
 
-statsmodels.formula.api.ols(y_col~X_col_1+X_col2, df).fit()   # 절편 포함되어 있음 , 자동 인코딩
-statsmodels.api.OLS(y_train,X_train).fit()                    # 절편 미 포함   
-
-sklearn.svm.SVC, LinearSVC   
+sklearn.svm.SVC, SVR, LinearSVC    
 
 sklearn.naive_bayes.GaussianNB, CategoricalNB, MultinomialNB, BernoulliNB, ComplementNB  
 
-sklearn.ensemble.RandomForestClassifier  
-sklearn.ensemble.RandomForestRegressor  
+sklearn.neighbors.KNeighborsClassifier(n_neighbors) / KNeighborsRegressor   # KNN    
 
-sklearn.neighbors.KNeighborsClassifier(n_neighbors)    # KNN   
-sklearn.neighbors.KNeighborsRegressor  
+sklearn.tree.DecisionTreeClassifier / ecisionTreeRegressor   
+sklearn.tree.BaggingClassifier / BaggingRegressor   
 
-sklearn.tree.DecisionTreeClassifier     
-sklearn.tree.DecisionTreeRegressor    
-sklearn.tree.BaggingClassifier  
-sklearn.tree.BaggingRegressor   
+sklearn.ensemble.RandomForestClassifier / RandomForestRegressor   
+sklearn.ensemble.GradientBoostingClassifier / GradientBoostingRegressor  
+sklearn.ensemble.AdaBoostClassifier / AdaBoostRegressor  
+sklearn.ensemble.IsolationForest  
+
+xgboost.XGBClassifier / XGBRegressor
 
 sklearn.cluster.KMeans (n_cluster, init, n_init)   
+sklearn.cluster import DBSCAN  
+pyclustering.cluster.kmedoids  
+scipy.cluster.hierarchy, dendrogram, linkage       # 계층적 군집  
 
 sklearn.metrics.mean_absolute_error, mean_squared_error, r2_core   
 
